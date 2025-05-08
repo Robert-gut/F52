@@ -1,0 +1,87 @@
+.container{
+  border: 4px solid blueviolet;
+  height: 97vh;
+
+  /* ! зробити flex container */
+  display: flex;
+
+  /* ! Змінити напрямок головної осі */
+  flex-direction: row;
+
+  /*!  позицювання по ГОЛОВНІЙ ОСІ*/
+  justify-content: space-evenly;
+
+  /* ! позиціювання по ДРУГОРЯДНІЙ ОСІ  коли тільки 1 рядок*/
+  /* align-items: flex-start; */
+
+  /* ! дозволити перенос на новий рядок */
+  /* flex-wrap: wrap; */
+
+  /*!позиціювання по ДРУГОРЯДНІЙ ОСІ тільки тоді коли вклучене перес на нову строчку */
+  /* ! все як  justify-content*/
+  /* align-content: space-around; */
+}
+
+.itemAll{
+  border: 2px solid green;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  font-size: 60px;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* ! змінює розмір по головній осі */
+  /* flex-basis: 23%; */
+
+}
+
+.item1{
+  /*! якщо число більше то цей елемент стає в самий кінець */
+  /* order: 4; */
+  /* align-self: flex-start; */
+
+  /* flex-grow: 1; */
+}
+.item2{
+  /*! якщо число більше то цей елемент стає в самий кінець */
+  /* order: 3; */
+
+  /* ! позиціювання окремого ел по ДРУГОРЯДНІЙ ОСІ */
+  /* align-self: center; */
+
+  /* flex-grow: 1; */
+
+}
+.item3{
+  /*! якщо число більше то цей елемент стає в самий кінець */
+  /* order: 2; */
+
+  /* ! позиціювання окремого ел по ДРУГОРЯДНІЙ ОСІ */
+  /* align-self: flex-end; */
+
+  /* flex-grow: 2; */
+
+}
+.item4{
+  /*! якщо число більше то цей елемент стає в самий кінець */
+  /* order: 1; */
+
+  /* ! позиціювання окремого ел по ДРУГОРЯДНІЙ ОСІ */
+  /* align-self: center; */
+
+  /* flex-shrink: 1; */
+  /*! в скільки раз він буде скоріше зменшуватися */
+
+  /* flex-grow: 3; */
+
+}
+.item5{
+  /*! якщо число більше то цей елемент стає в самий кінець */
+  /* order: 0; */
+
+  /* flex-grow: 4; */
+}
