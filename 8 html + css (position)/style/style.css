@@ -1,0 +1,50 @@
+.container{
+  background-color: #952828;
+  padding: 50px;
+  position: relative;
+}
+
+.item1{
+  padding: 30px;
+  background-color: red;
+
+  /* position: static; */
+  /*! дефолт */
+
+  /* position: relative; */
+  /* top: 50px; */
+  /* bottom: 50px; */
+  /* right: -50px; */
+  /*! ві позиціонується відносно свого міся  зберігає за собою своє місце   */
+
+
+  /* position: absolute; */
+  /* top: 0px; */
+  /* bottom:0px; */
+  /* left: 0px; */
+  /*! він стає інлайновим, втрачає своє місце, позиціонується відносно батьківського блока або всьої сторінки  */
+
+  /* position: fixed;
+  top: 300px;
+  left: 300px; */
+  /*! він стає інлайновим, втрачає своє місце, позиціонується відносно екрана  */
+
+
+
+  /*! top: ;
+  bottom: ;
+  right: ;
+  left: ; */
+}
+.item2{
+  padding: 30px;
+  background-color: blue;
+
+  position: sticky;
+  top: 0px;
+
+}
+.item3{
+  padding: 30px;
+  background-color: greenyellow;
+}

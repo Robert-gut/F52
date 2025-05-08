@@ -1,0 +1,88 @@
+.box{
+  width: 200px;
+  height: 200px;
+  background-color: blueviolet;
+  color: white;
+  font-size: 190px;
+  text-align: center;
+  margin: 15px;
+
+  /*! float */
+  /*! 1 позиціонує ел з ліва або з права */
+  /*! 2 дозволяє наступним елементам обтікати його */
+  /*! 3  інлайн*/
+  /* float: left;
+  float: right; */ 
+}
+
+.box1{
+  float: left;
+}
+.box2{
+  float: right;
+  clear: both;
+}
+.box3{
+  float: left;
+  clear: both;
+}
+.box4{
+  float: right;
+  clear: both;
+}
+
+
+ul li{
+  list-style-type: none;
+  float: left;
+}
+
+/*! ////////////////  background ///////////////////// */
+
+
+body{
+  /*! bg color */
+  /* background-color: burlywood; */
+
+  /* background-color: #89b45a; */
+  /* background-color: #000000; */
+  /* background-color: #ffffff; */
+
+  /* background-color: rgb(red, green, blue); */
+  /* background-color: rgb(0, 0, 0); */
+  /* background-color: rgb(255, 255, 255); */
+  /* background-color: rgb(76, 16, 179); */
+  
+  /* background-color: rgba(76, 16, 179, 0.5); */
+
+  /*! img bg  */
+
+  background-image: url(../img/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg);
+
+  /* ! повторюваннісьть */
+  /* background-repeat: repeat; */
+  background-repeat: no-repeat;
+  /* background-repeat: repeat-x; */
+  /* background-repeat: repeat-y; */
+  /* background-repeat: space; */
+  /* background-repeat: round; */
+
+  /* ! позиціювання */
+  /* background-position: center center; */
+  /* background-position: 100px 100px; */
+
+  /* ! закріплення */
+  /* background-attachment: fixed; */
+  /* background-attachment: local; */
+  /* background-attachment: scroll; */
+
+  /* background-size: contain; */
+  /* background-size: cover; */
+  /* background-size: auto; */
+  /* background-size: 600px 600px; */
+  /* background-size: 100% 100%; */
+
+
+  background: url(../img/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg) no-repeat fixed top left;
+  background-size: 100% 100%;
+}

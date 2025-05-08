@@ -1,0 +1,32 @@
+.featured{
+  background-color: #eae7e8;
+  height: 260px;
+}
+
+.featured .p1{
+  font-size: 18px;
+  color: #7a6666;
+  font-weight: 700;
+  font-family: latoB;
+  padding-top: 50px;
+}
+.featured .p2{
+  font-size: 13px;
+  color: #7a6666;
+  font-weight: 200;
+  font-family: Magra;
+  line-height: 24px;
+  padding-top: 40px
+}
+
+.featured h4{
+  font-family: Roboto;
+  font-size: 30px;
+  color: #cb3362;
+  padding-top: 27px;
+}
+
+.featured img{
+  float: right;
+  padding-top: 80px;
+}

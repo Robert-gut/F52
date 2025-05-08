@@ -1,0 +1,73 @@
+/* table,th,td{
+  border: 2px solid black; */
+
+  /*! відстань між комірками*/
+  /* border-spacing: 10px 30px; */
+  /* border-spacing: 0px; */
+
+  /*! заберає подвоєнні рамки*/
+  /* border-collapse: collapse; */
+
+  /*! позиціювання заголовка */
+  /* caption-side: top; */
+
+  /*! показувати або ні пусті комірки */
+  /* empty-cells: hide; */
+/* } */
+
+/* thead{
+  color: red;
+}
+
+tbody{
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+tfoot{
+  background-color: blue;
+}
+
+tfoot tr td:nth-child(2){
+  color: red;
+} */
+
+table, th, td{
+  border: 1px solid rgb(102, 101, 101);
+  border-collapse: collapse;
+  font-size: 19px;
+}
+
+thead{
+  background-color: rgb(219, 213, 213);
+}
+
+tbody tr td:nth-child(1){
+  width: 300px;
+}
+tbody tr td:nth-child(2){
+  background-color: rgb(204, 204, 247);
+}
+tbody tr td:nth-child(3){
+  background-color: rgb(247, 204, 206);
+}
+
+tbody tr td:nth-child(2),
+tbody tr td:nth-child(3){
+  text-align: center;
+  width: 60px;
+  height: 25px;
+}
+
+tfoot{
+  color: red;
+  text-align: center;
+  font-weight: 800;
+}
+
+caption{
+  font-weight: bold;
+  font-size: 27px;
+  font-family: Arial, Helvetica, sans-serif;
+}

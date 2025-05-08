@@ -1,0 +1,260 @@
+/*? animation */
+
+.wrapeer{
+  height: 95vh;
+}
+.animation-el{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  background: red;
+
+
+  /* ///////////////// */
+  animation-name: example;   /*!назва ключових кадрів */
+  animation-duration: 3s; /*! за скільки часу анімація пройде від 0% до 100% */
+  animation-timing-function: ease; /*!прискорення */
+  animation-delay: 0s;/*! затримка*/
+  /* animation-iteration-count: 2; */
+  animation-iteration-count: infinite; /*!к-ть разів має відпрацювати анімація*/
+  /* animation-direction: alternate;!0 to 100 to 0 */
+  /* animation-fill-mode: forwards; */    /*!кінець анімації 100 або 0 */
+  /* animation-play-state: paused; */
+
+  animation: example 7s linear infinite alternate forwards;
+}
+
+.animation-el:hover{
+  animation-play-state: paused;
+}
+
+@keyframes example {
+  0%{
+    left: 0%;
+    top: 0%;
+    background: red;
+  }
+  25%{
+    left: 75%;
+    top: 0%;
+    background: greenyellow;
+    border-radius: 0%;
+  }
+  50%{
+    top: 70%;
+    left: 75%;
+    background: pink;
+    border-radius: 50%;
+  }
+  75%{
+    left: 0%;
+    top: 70%;
+    background: blue;
+    border-radius: 0%;
+  }
+  100%{
+    left: 0%; 
+    top: 0%;
+    background: red;
+    border-radius: 50%;
+  }
+}
+
+
+
+/* ? transition */
+
+.transition{
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+  background: rgb(0, 186, 0);
+
+
+  /* transition-property: background-color, width, height; */
+  transition-property: all;
+  /*! які властивості мають плавно змінюватися  */
+  transition-duration: 5s;
+  /* transition-duration: 5s, 3s, 10s; */
+  /*! за скільки часу має відбуватися перехід 1 to 2 */
+  transition-timing-function: linear;
+  /*!прискорення */
+  /* transition-delay: 1s, 2s, 3s; */
+  /* ! затримка */
+
+}
+
+
+.transition:hover{
+  background-color: fuchsia;
+  width: 500px;
+  height: 500px;
+}
+
+
+/* /////////////////////////////////  */
+
+/*? transform  */
+
+/* .el1, .el2, .el3{
+  width: 200px;
+  height: 200px;
+  border: 4px solid black;
+  margin: 5px;
+}
+
+.el2:hover{
+  width: 400px;
+  height: 400px;
+} */
+
+
+.transform{
+  margin: 50px 200px;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+.transform img{
+  transition: all 2s;
+  width: 500px;
+
+  /*! опорна точка */
+  /* transform-origin: bottom right; */
+  /* transform-origin: 20px 100px; */
+}
+
+.transform:hover img{
+  /*! обертання */
+  transform: rotate(180deg);
+  /* transform: rotate(-90deg); */
+  /* transform: rotate(11190deg); */
+
+  /*! маштабування */
+  /* transform: scale(1); */
+  /* transform: scale(0.4);
+  transform: scale(1.5);
+  transform: scale(20); */
+  /* transform: scale(1.5, 2);
+  transform: scale(1.5, 0.5);  */
+
+  /* !зміщення */
+  /* transform: translate(150px, 150px);
+  transform: translate(-150px, 150px); */
+
+  /*! розтягування */
+  /* transform: skew(50deg, 20deg); */
+
+}
+
+
+/*? filter */
+
+.filter{
+  margin: 100px;
+}
+
+.filter img{
+  width: 500px;
+  transition: all 1s linear;
+}
+
+.filter img:hover{
+  /* filter: blur(10px); */
+  /* ! blur 0px є defalt */
+
+  /* filter: drop-shadow(15px 15px 2px black); */
+  /*! тінь*/
+
+  /* filter: grayscale(100%); */
+  /* filter: grayscale(0%); */
+  /*! чорно біле 0% to 100%*/
+
+  /* filter: brightness(100%); */
+  /* filter: brightness(0%); */
+  /* filter: brightness(180%); */
+  /*! яскравісьть 100% є дефолт  */
+
+  /* filter: contrast(100%); */
+  /* filter: contrast(0%); */
+  /* filter: contrast(150%); */
+  /*! контраснісьть 100% є дефолт  */
+
+  /* filter: hue-rotate(0deg);
+  filter: hue-rotate(240deg); */
+  /*! поворот відтінку на корірному колесі  */
+
+  /* filter: invert(100%); */
+  /*! перетворення фото в негатив  */
+
+  /* filter: saturate(100%); */
+  /* filter: saturate(150%); */
+  /*! насищенісьть 100% є дефолт  */
+
+  /* filter: sepia(0%); */
+  /* filter: sepia(100%); */
+  /*! ефект старого фото  0% is default  */
+
+  /* filter: opacity(0%); */
+  /* filter: opacity(100%); */
+  /* filter: opacity(70%); */
+
+  /* /////////////////////////////////////////// */
+
+  /* filter: blur(1px) contrast(150%) drop-shadow(5px 7px 5px red); */
+}
+
+
+
+/*1 //////////// shadow /////////////// */
+
+.star-six {
+  width: 0px;
+  height: 0px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid red;
+  position: relative;
+}
+.star-six::after {
+  width: 0px;
+  height: 0px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid red;
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: -50px;
+}
+
+.star-six{
+  /* box-shadow: 15px 15px 2px black; */
+  filter: drop-shadow(15px 15px 2px black);
+}
+
+
+.mail{
+  background-color: #d82c2c;
+  width: 400px;
+  height: 150px;
+  margin: 100px;
+  border-radius: 10px;
+  position: relative;
+
+  /* box-shadow: 15px 15px 9px black; */
+  /* filter: drop-shadow(15px 15px 2px black); */
+  
+}
+
+.mail::before{
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-top: 50px solid #d82c2c;
+  border-left: 40px solid transparent;
+  position: absolute;
+  top: 150px;
+  left: 330px;
+}

@@ -1,0 +1,85 @@
+.container{
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  margin: 100px auto;
+
+  /* ! gradient */
+
+  /* background-color: red;
+  background-image: url(); */
+  /* background: red; */
+
+  /*! linear */
+  /* background:  linear-gradient(red, blue); */
+  /* background:  linear-gradient(red, yellow); */
+  /* background:  linear-gradient(red, yellow, pink, green); */
+
+  /* background:  linear-gradient(to right, blue, yellow);
+  background:  linear-gradient(to left, blue, yellow);
+  background:  linear-gradient(to top, blue, yellow); */
+  /* background:  linear-gradient(to top right, blue, yellow); */
+
+  background:  linear-gradient(124deg, blue, yellow);
+
+  /* background:  linear-gradient(red 10px, yellow 30%, blue 50%);
+  background:  linear-gradient(at 0% 30%, red 10px, yellow 30%, blue 50%);
+   */
+
+   /* ! radial */
+  /* background:  radial-gradient(red, blue, green); */
+  /* background:  radial-gradient(red 10px, yellow 30%, blue 50%); */
+  /* background:  radial-gradient(at 0 0, red 10px, yellow 30%, blue 50%); */
+  /* background:  radial-gradient(at 200px 0px, red 10px, yellow 30%, blue 50%); */
+  /* background:  radial-gradient(red 10px, yellow 30%, blue 50%); */
+
+
+  /* background: rgb(238,36,36);
+  background: linear-gradient(90deg, rgba(238,36,36,1) 0%, rgba(32,41,171,0) 39%, rgba(183,26,86,0) 63%, rgba(0,255,20,1) 100%); */
+
+
+  /* background: rgb(238,36,36);
+  background: radial-gradient(circle, rgba(238,36,36,1) 0%, rgba(32,41,171,0) 39%); */
+
+  /*! border */
+  /* border: 5px solid red; */
+  
+  /* ? ширину */
+  /* border-width: 10px 40px 50px 60px; */
+
+  /* ? колір */
+  /* border-color: yellow red rgb(19, 33, 115) #000; */
+
+  /*? стиль */
+  /* border-style: dotted solid groove ridge; */
+
+  /* border-top: 20px solid pink;
+  border-bottom: 40px solid black;
+  border-right: ;
+  border-left: ; */
+
+  /*! border radius */
+  /* border-radius: 20px; */
+  /* border-radius: 50px; */
+
+  /* border-radius: 20px 40px 120px 200px; */
+
+  /* border-radius: 250px; */
+  /* border-radius: 50%; */
+
+  /*! box-shadow */
+
+  /* box-shadow: x  y blur size color;
+  box-shadow: 40px 40px 35px 0px black; */
+  /* box-shadow:inset 0px 0px 25px 0px rgb(255, 0, 0); */
+
+  transition: all 1s linear;
+}
+
+
+.container:hover{
+  box-shadow: 20px 20px 10px 0px rgb(107, 107, 107);
+  width: 520px;
+  height: 520px;
+  cursor: pointer;
+}

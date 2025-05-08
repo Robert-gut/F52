@@ -1,0 +1,44 @@
+.baner{
+  position: relative;
+}
+
+.baner .circles{
+  width: 156px;
+  height: 150px;
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
+}
+
+.baner .circles-green{
+  width: 143px;
+  height: 143px;
+  border-radius: 50%;
+  background-color: #c8c10d;
+  position: absolute;
+  top: 10px;
+
+}
+
+.baner .circles a{
+  display: block;
+  width: 143px;
+  height: 143px;
+  border-radius: 50%;
+  background-color: rgba(202, 13, 111, 0.8);
+  text-decoration: none;
+  position: absolute;
+  left: 10px;
+}
+
+.baner .circles a span{
+  position: relative;
+  left: 22px;
+  top: 49px;
+  font-size: 24px;
+  line-height: 24px;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: Quicksand;
+  text-align: center;
+}

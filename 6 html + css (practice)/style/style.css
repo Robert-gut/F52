@@ -1,0 +1,192 @@
+.container{
+  border: 2px solid black;
+  width: 600px;
+  height: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+/* ! 1 */
+
+/* header{
+  border: 2px solid black;
+  height: 15%;
+  margin: 5px;
+}
+
+.box1{
+  margin: 0px 5px 5px 5px; 
+  border: 2px solid black;
+  width: 120px;
+  height: 500px;
+  float: left;
+}
+
+.box2{
+  margin: 0px 5px 5px 5px; 
+  border: 2px solid black;
+  width: 120px;
+  height: 500px;
+  float: right;
+}
+
+.box3{
+  margin: 0 auto;
+  border: 2px solid black;
+  width: 320px;
+  height: 580px;
+}
+
+footer{
+  margin: 5px; 
+  border: 2px solid black;
+  height: 70px;
+} */
+
+/* ! 2 */
+
+/* header{
+  border: 2px solid black;
+  height: 15%;
+  margin: 5px;
+}
+
+.box1{
+  margin: 5px; 
+  border: 2px solid black;
+  width: 150px;
+  height: 450px;
+  float: left;
+}
+
+.box2{
+  margin-left: 172px;
+  margin-top: 10px;
+  border: 2px solid black;
+  width: 420px;
+  height: 600px;
+}
+
+
+footer{
+  margin: 5px; 
+  border: 2px solid black;
+  height: 50px;
+  clear: both;
+} */
+
+
+
+/* ! 3 */
+
+/* header{
+  border: 2px solid black;
+  height: 15%;
+  margin: 5px;
+}
+
+.box1{
+  margin: 5px; 
+  border: 2px solid black;
+  width: 150px;
+  height: 450px;
+  float: right;
+}
+
+.box2{
+  margin-left: 5px;
+  margin-top: 10px;
+  border: 2px solid black;
+  width: 420px;
+  height: 600px;
+}
+
+
+footer{
+  margin: 5px; 
+  border: 2px solid black;
+  height: 50px;
+  clear: both;
+} */
+
+div{
+  margin: 15px;
+}
+
+span{
+  position: absolute;
+}
+
+.A{
+  margin: 0 auto;
+  width: 700px;
+  height: 800px;
+  background-color: red;
+}
+
+.B{
+  float: left;
+  background-color: orange;
+  width: 20%;
+  height: 760px;
+}
+
+.C{
+  width: 71%;
+  height: 760px;
+  background-color: yellow;
+  float: left;
+}
+
+.D{
+  width: 94%;
+  height: 30.6%;
+  background-color: greenyellow;
+}
+
+.E{
+  width: 30%;
+  height: 87%;
+  background-color: rgb(0, 98, 255);
+  float: left;
+}
+
+.F{
+  width: 57%;
+  height: 87%;
+  background-color: rgb(79, 1, 109);
+  float: left;
+}
+
+.H{
+  width: 38.7%;
+  height: 85%;
+  background-color: grey;
+  float: left;
+}
+
+.I{
+  width: 70%;
+  height: 37%;
+  background-color: rgb(213, 213, 213);
+}
+
+.G{
+  width: 38.7%;
+  height: 85%;
+  background-color: rgb(142, 1, 189);
+  float: left;
+}
+
+.G-last{
+  width: 89%;
+  height: 85%;
+  background-color: rgb(142, 1, 189);
+  float: left;
+}
+
+
+.t{
+  background-image: url();
+}

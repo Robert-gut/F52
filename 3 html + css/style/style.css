@@ -1,0 +1,135 @@
+/* p{
+  color: red;
+} */
+
+/*!  */
+/*?  */
+/**  */
+
+/* ! Синтаксис */
+
+/* selector{
+  properti: properti value;
+  properti: properti value;
+  properti: properti value;
+  properti: properti value;
+  properti: properti value;
+  properti: properti value;
+} */
+
+/*? Селектори */
+
+/*! 1 селекьтор тега  */
+
+/* p{
+  font-size: 30px;
+  color: blue;
+} */
+
+/*! 2 селектор Class  */
+
+/* .selector-class{
+  font-weight: 900;
+} */
+
+/*! 3 селекто id */
+
+/* #selector-id{
+  text-decoration: underline;
+} */
+
+/*! 4 селектор по атрибуту  */
+
+/* [title="this is p"]{
+  background-color: #ccc;
+} */
+
+/*! селектор all */
+
+/* *{
+  text-align: center;
+} */
+
+
+h1 span:nth-child(1){
+  color:red
+}
+h1 span:nth-child(2){
+  color:blue
+}
+h1 span:nth-child(3){
+  color:yellow
+}
+h1 span:nth-child(4){
+  color:green
+}
+
+h1{
+  text-align: center;
+}
+
+
+/*! /////////////////// text //////////////////////// */
+
+@font-face {
+  font-family: Pacifico;
+  src: url(../font/Pacifico-Regular.ttf);
+}
+
+
+p{
+  /*! text */
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  /* font-family: Pacifico; */
+  font-size: 26px;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  text-align: justify;
+  text-indent: 50px;
+  text-transform: capitalize;
+  line-height: 50px;
+
+  /*! colors */
+  background-color: pink;
+  color: green;
+
+  /*! розмір елемента */
+  width: 600px;
+  height: 600px;
+
+  /*! border */
+  border: 4px solid black;
+
+  /*! внутрішній відступ  */
+  /* padding: 40px; */
+  /* padding: 40px 10px; */
+  /* padding: 40px 50px 60px 80px; */
+
+  /*! зовнішній відступ  */
+  /* margin: 40px; */
+  /* margin: 40px 10px; */
+  /* margin: 40px 50px 60px 80px; */
+
+  margin: 0 auto;
+
+
+  /* ///////////////////////////////// */
+
+  /* margin-top:  ;
+  margin-bottom: ;
+  margin-right: ;
+  margin-left: ;
+
+  padding-top:  ;
+  padding-bottom: ;
+  padding-right: ;
+  padding-left: ;
+  
+  border-top:  ;
+  border-bottom: ;
+  border-right: ;
+  border-left: ; */
+
+}
+

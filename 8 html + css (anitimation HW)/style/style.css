@@ -1,0 +1,60 @@
+body{
+  background: #ccc;
+}
+
+.slide-show{
+  width: 570px;
+  height: 270px;
+  margin: 0 auto;
+  border: solid 20px #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.sliders{
+  width: 1710px;
+  height: 270px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: slide-show;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.sliders article{
+  position: absolute;
+}
+
+.sliders article:nth-child(1){
+  left: 0;
+}
+.sliders article:nth-child(2){
+  left: 570px;
+}
+.sliders article:nth-child(3){
+  left: 1140px;
+}
+
+.sliders div{
+  position: absolute;
+  width: 250px;
+  top: 50px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 10px;
+  text-align: justify;
+  box-shadow: 2px 2px 3px 3px black;
+}
+
+@keyframes slide-show {
+  0%{left: 0;}
+  20%{left: 0;}
+  35%{left: -570px;}
+  60%{left: -570px;}
+  75%{left: -1140px;}
+  100%{left: -1140px;}
+}
