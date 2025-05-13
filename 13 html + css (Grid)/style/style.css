@@ -1,0 +1,152 @@
+.itemAll{
+  border: 2px solid green;
+  color: red;
+  font-size: 24px;
+  padding: 15px;
+  font-weight: 900;
+}
+
+.container{
+  height: 95vh;
+  border: 2px solid blueviolet;
+  /* padding: 40px; */
+
+  /*! Grid */
+  display: grid;
+
+  /*! шаблон стовпців  -*/ 
+  /* grid-template-columns: 100px 100px 400px 600px; */
+  /* grid-template-columns: 20% 50% 20% 10%; */
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  /* grid-template-columns: 400px 1fr 200px; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+  /* grid-template-columns: repeat(12, 1fr); */
+  /* grid-template-columns: repeat(12, 50px 100px 150px); */
+  /* grid-template-columns: 100px 100px 100px; */
+  grid-template-columns: repeat(3, 1fr);
+
+  /*! шаблон рядків  (працює так само як і grid-template-columns)\ */
+  /* grid-template-rows: 50px 100px 150px; */
+
+  /*! відстань між комірками  */
+
+  /*? відстань між комірками по колонкам*/
+  /* grid-column-gap: 40px; */
+  /*? відстань між комірками по рядкам*/
+  /* grid-row-gap: 40px; */
+  /*? загальна для row і для column*/
+  grid-gap: 40px;
+
+  /*! розмір по висоті */
+  /* grid-auto-rows: 100px; */
+  /* grid-auto-rows: minmax(60px, auto); */
+
+  /*!  Вирівнювання всього разом (всіх комірок)*/
+  /* justify-content: space-evenly;
+  align-content: space-evenly; */
+
+  /*! вирівнювання в комірках самих елементів  */
+  /* align-items: end;
+  justify-items: end; */
+
+}
+
+
+/*! позиціювання окромо в окремій комірці */
+/* .item1{
+  align-self: end;
+  justify-self: end;
+}
+.item2{
+  align-self: start;
+  justify-self: end;
+}
+.item3{
+  align-self: center;
+  justify-self: end;
+}
+.item4{
+  align-self: center;
+  justify-self: start;
+}
+.item5{
+  align-self: center;
+  justify-self: center;
+}
+.item6{
+  align-self: start;
+  justify-self: center;
+}
+.item7{
+  align-self: end;
+  justify-self: center;
+}
+.item8{
+  align-self: start;
+  justify-self: start; 
+} */
+
+
+/*! Скільки місця займає це компонент */
+.item5{
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+  /*? скоросчення */
+  grid-column: 1/3;
+
+  grid-row-start: 1;
+  grid-row-end: 2;
+  /*? скоросчення */
+  grid-row: 1/2;
+}
+
+.item8{
+  grid-row-start: 4;
+  grid-column-start: 2;
+}
+
+
+
+.item{
+  border: 2px solid green;
+  color: red;
+  font-size: 24px;
+  padding: 15px;
+  font-weight: 900;
+}
+
+.container2{
+  display: grid;
+  grid-template-areas: 
+    'header header header'
+    'navbar navbar navbar'
+    'sidebar main section'
+    'footer footer footer'
+  ;
+  grid-gap: 10px;
+
+  grid-template-columns: 250px 1fr 200px;
+  grid-template-rows: 150px 50px 1fr 80px;
+
+}
+
+.header{
+  grid-area: header;
+}
+.navbar{
+  grid-area: navbar;
+}
+.sidebar{
+  grid-area: sidebar;
+  align-self: start;
+}
+.main{
+  grid-area: main;
+}
+.section{
+  grid-area: section;
+  align-self: start;
+}
+.footer{
+  grid-area: footer;
+}
