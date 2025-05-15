@@ -1,0 +1,131 @@
+/*! media  */
+
+/* @media [умова]{
+  [блок css правил]
+} */
+
+/*? screen це пристрій з дисплеєм */
+/*? prit це для прінтерів */
+/*? all це дефолтне що означає всі пристрої  */
+/*? speech це пристрої які чітають з екрана  */
+/* 
+@media screen {
+  body{
+    background-color: blue;
+  }
+} */
+
+/* body{
+    background-color: rgb(31, 199, 26);
+  } */
+
+
+/*! and (і)- має бути виконанні всі умови*/
+/* @media screen and (min-width: 400px) and (max-width: 960px){
+  body{
+    background-color: blue;
+  }
+} */
+
+/*! , (або)- має бути виконана хочаб одна умова*/
+
+/* @media screen and (min-width: 960px), (max-width: 400px){
+   body{
+    background-color: blue;
+  }
+} */
+
+/*! not це коли заперечуємо певну умову  */
+
+/* @media print and (not(color)){
+  body{
+    background-color: blue;
+  }
+} */
+
+/*! ми можемо керувати орієнтацією екрана  */
+
+/* @media screen and (orientation: portrait){
+  body{
+    background-color: red;
+  }
+} */
+
+.container{
+  width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.items{
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  background-color: black;
+  color: white;
+  grid-column: 1/2;
+  height: 40px;
+}
+
+.menu{
+  background-color: red;
+  color: white;
+  height: 40px;
+  grid-column: 2/5;
+}
+
+.hero{
+  background-color: blue;
+  color: white;
+  height: 300px;
+  grid-column: 1/5;
+}
+
+.main{
+  background-color: darkblue;
+  color: white;
+  height: 200px;
+  grid-column: 1/3;
+  grid-row: 3/5;
+}
+
+.image{
+  background-color: skyblue;
+  grid-column: 4/5;
+  grid-row: 3/4;
+  height: 100px;
+}
+.extra{
+  background-color: lightgreen;
+  grid-column: 4/5;
+  grid-row: 4/5;
+  height: 100px;
+}
+.banner{
+  background-color: yellow;
+  height: 100px;
+  grid-column: 1/5;
+}
+
+@media screen and (max-width: 425px){
+  .items{
+    grid-column: 1/5;
+  }
+  .main{
+    grid-row: 4/5;
+  }
+  .baner{
+    grid-row: 6/7;
+  }
+  .image{
+    grid-row: 8/9;
+  }
+  .extra{
+    grid-row: 7/8;
+  }
+}
