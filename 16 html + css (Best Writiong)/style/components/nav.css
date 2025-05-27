@@ -17,9 +17,19 @@ nav ul li a{
   color: var(--color_btn_text);
   font-weight: 400;
   text-decoration: none;
-  padding: 8px 32px;
+  padding: 8px 31px;
+  position: relative;
   &:hover{
     background-color: var(--color_btn_send_message_hover);
     color: var(--color_btn_text_hover);
+    box-shadow: -6px 0px 0px var(--color_btn_send_message_hover),
+    6px 0px 0px var(--color_btn_send_message_hover);
+    z-index: 1;
   }
+}
+
+nav ul .border-li::after{
+  content: '';
+  border: 2px solid #fff;
+  border-radius: 3px;
 }
