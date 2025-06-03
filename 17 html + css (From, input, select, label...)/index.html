@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Writings</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+
+  <form action="#" method="post">
+
+    <!--! опис інпута  -->
+    <label for="firstName">First Name</label>
+    <!--! текстовий інпус -->
+    <input 
+    id="firstName"
+    type="text" 
+    name="firstName"
+    value=""
+    placeholder="type text"
+    autocomplete="on"
+    >
+
+    <!--! password input  -->
+    <input type="password" placeholder="type password">
+
+    <!--! поле вводу для телефона -->
+    <input type="tel" placeholder="type tel">
+
+    <!--! поле для вводу чисел-->
+    <input type="number" placeholder="type number" min="3" max="9">
+
+    <!--! поле для url  -->
+    <input type="url" placeholder="type url">
+
+    <!--! поле для file  -->
+    <input type="file">
+    
+    <!--! поле для file кілька елементів -->
+    <input type="file" multiple>
+
+    <!--! поле для дати -->
+    <input type="date">
+
+    <!--! поле для часу -->
+    <input type="time">
+    
+    <!--! поле для часу та дати -->
+    <input type="datetime-local">
+   
+    <!--! поле для color -->
+    <input type="color">
+    
+    <!--! поле для month -->
+    <input type="month">
+    
+    <!--! поле для week -->
+    <input type="week">
+    
+    <!--! поле для checkbox -->
+    <div style="display: flex; align-items: center; margin-bottom: 40px;">
+      <input id="checkbox" style="margin: 0; width: 20px; height: 20px; color: red; background-color: red;" type="checkbox">
+      <label for="checkbox">Show password</label>
+    </div>
+
+    <!--! поле для радіо кнопки -->
+    <div>
+      <input id="btn1" name="radioBtn" type="radio">
+      <label for="btn1">Radio 1</label>
+    </div>
+    <div>
+      <input id="btn2" name="radioBtn" type="radio" checked>
+      <label for="btn2">Radio 2</label>
+    </div>
+    <div>
+      <input id="btn3" name="radioBtn" type="radio">
+      <label for="btn3">Radio 3</label>
+    </div>
+
+    <!--! поле для діапазону -->
+    <input type="range" value="0" min="0" max="100" step="50">
+
+    <!--! поле для пошук  -->
+    <input type="search" placeholder="search">
+
+    <!--! поле для Email  -->
+    <input type="email" placeholder="Enter your email" required>
+
+    <!--! відправка форми -->
+    <input type="submit" value="ok">
+
+    <!--! reset форми -->
+    <input type="reset">
+
+    <!--! поле для текста -->
+    <textarea name="" id=""></textarea>
+
+    <select style="margin: 50px;">
+      <option value="gmail.com">GMAIL</option>
+      <option value="url.new">URL.NEW</option>
+      <option value="outlook.com">OUTLOOK</option>
+    </select>
+
+    <button type="submit">ok</button>
+  </form>
+
+</body>
+</html>
+
