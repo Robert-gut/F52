@@ -1,0 +1,134 @@
+body {
+  background-color: #fff;
+}
+
+main {
+  width: 960px;
+  margin: 0 auto;
+  background-color: blue;
+}
+main section {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+main article {
+  width: 200px;
+  height: 150px;
+  background-color: green;
+}
+main table {
+  border: 1px solid darkblue;
+  width: 500px;
+  background-color: gray;
+  border-collapse: collapse;
+}
+main table tr th {
+  font-size: 20px;
+}
+main table tr td {
+  font-size: 16px;
+}
+main .baner {
+  width: 100%;
+  background-color: #bb4f4f;
+}
+main .baner img {
+  width: 50%;
+  float: left;
+}
+main .baner h4 {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+footer div {
+  background-color: darkgoldenrod;
+}
+footer div p {
+  color: red;
+}
+footer div p a {
+  color: blue;
+  text-decoration: underline;
+}
+
+a {
+  color: white;
+  font-size: 30px;
+}
+a:hover {
+  font-size: 40px;
+}
+a::after {
+  content: " >";
+}
+a::before {
+  content: "< ";
+}
+
+main {
+  background-color: yellow;
+  color: red;
+}
+main section {
+  background-color: pink;
+  font-size: 50px;
+}
+
+footer div {
+  background-color: darkgoldenrod;
+}
+footer div p {
+  color: red;
+  background-color: #68cbf8;
+}
+footer div p a {
+  color: blue;
+  text-decoration: underline;
+  font-size: 50px;
+}
+
+.input3, .input2, .input1 {
+  display: block;
+  margin: 50px;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+.input3:hover, .input2:hover, .input1:hover {
+  border: 5px solid red;
+}
+
+.input1 {
+  width: 100px;
+}
+
+.input2 {
+  width: 200px;
+}
+
+.input3 {
+  width: 300px;
+}
+
+.mixin .b1 {
+  border: 5px solid blue;
+  border-radius: 0;
+  background: black;
+}
+.mixin .b2 {
+  border: 5px solid rgb(255, 0, 179);
+  border-radius: 15px;
+  background: black;
+}
+.mixin .b3 {
+  border: 5px solid rgb(255, 208, 0);
+  border-radius: 50%;
+  background: black;
+  padding: 100px;
+}
+
+.box {
+  padding: 20px;
+  margin: 5px;
+}/*# sourceMappingURL=style.css.map */

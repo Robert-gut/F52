@@ -1,0 +1,185 @@
+body{
+  background-color: #fff;
+}
+
+//! 1 Вложенісьть 
+
+main{
+  width: 960px;
+  margin: 0 auto;
+  background-color: blue;
+
+  section{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+  }
+
+  article{
+    width: 200px;
+    height: 150px;
+    background-color: green;
+  }
+
+  table{
+    border: 1px solid darkblue;
+    width: 500px;
+    background-color: gray;
+    border-collapse: collapse;
+
+    tr{
+      th{
+        font-size: 20px;
+      }
+      td{
+        font-size: 16px;
+      }
+    }
+  }
+
+  .baner{
+    width: 100%;
+    background-color: #bb4f4f;
+
+    img{
+      width: 50%;
+      float: left;
+    }
+
+    h4{
+      font-size: 40px;
+      font-weight: 900;
+    }
+  }
+}
+
+footer{
+  div{
+    background-color: darkgoldenrod;
+
+    p{
+      color: red;
+
+      a{
+        color: blue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//?2 псевдо класи і псевдо елементи
+
+a{
+  color: white;
+  font-size: 30px;
+
+  &:hover{
+    font-size: 40px;
+  }
+
+  &::after{
+    content: ' >';
+  }
+
+  &::before{
+    content: '< ';
+  }
+}
+
+
+//! 3 змінні $
+
+$font: 50px;
+$fontColor: red;
+
+
+$L1_1: #68cbf8;
+
+main{
+  background-color: yellow;
+  color: $fontColor;
+
+  section{
+    background-color: pink;
+    font-size: $font;
+  }
+}
+
+footer{
+  div{
+    background-color: darkgoldenrod;
+
+    p{
+      color: red;
+      background-color: $L1_1;
+      a{
+        color: blue;
+        text-decoration: underline;
+        font-size: $font;
+      }
+    }
+  }
+}
+
+//! 4 імпотрти 
+
+// @import url('./main.css');
+// @use "./main.scss";
+
+//! 5 шаблони @extend
+
+%allInputs{
+  display: block;
+  margin: 50px;
+  border: 2px solid red;
+  border-radius: 5px;
+  &:hover{
+    border: 5px solid red;
+  }
+}
+
+
+.input1{
+  @extend %allInputs;
+  width: 100px;
+}
+.input2{
+  @extend %allInputs;
+  width: 200px;
+}
+.input3{
+  @extend %allInputs;
+  width: 300px;
+}
+
+//! 6 міксіни  
+
+@mixin border($color, $size, $type, $radius, $bg){
+  border: $size $type $color;
+  border-radius: $radius;
+  background: $bg;
+}
+
+.mixin{
+  .b1{
+    @include border(blue, 5px, solid, 0, black);
+  }
+  .b2{
+    @include border(rgb(255, 0, 179), 5px, solid, 15px, black);
+  }
+  .b3{
+    @include border(rgb(255, 208, 0), 5px, solid, 50%, black);
+    padding: 100px;
+  }
+}
+
+//! 7 матиматичні операції
+
+$base-padding: 10px;
+
+.box{
+  padding: $base-padding * 2;
+  margin: $base-padding / 2;
+}
+
