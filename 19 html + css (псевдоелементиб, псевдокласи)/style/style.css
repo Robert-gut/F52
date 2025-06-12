@@ -1,0 +1,129 @@
+/*! hover: працює коли ми навели курсором на елемент */
+button:hover{
+  color: rgb(209, 34, 34);
+  background-color: rgb(7, 189, 186);
+  border: 2px solid rgb(0, 255, 106);
+}
+
+/*! :active - активни стан елемента (коли натиснули) */
+button:active{
+  color: white;
+  background-color: red;
+  border: 2px solid blue;
+}
+
+/*! :focus вибраний елемент дял вводу */
+input:focus{
+  background-color: green;
+  border: 2px solid yellow;
+  border-radius: 5px;
+}
+
+/*! :visited -коли ми переходили по посиланню   */
+a:visited{
+  color:#701818;
+}
+
+
+/*:any() - вибирає елементи які відповідають хочаб одному селектору  */
+
+body:any(button, a){
+  border: 1px solid firebrick;
+}
+
+/* any-link - вибирає будь які гіперсилки*/
+
+:any-link{
+  color: greenyellow;
+}
+
+/* :checked - вибирає відзначенні елементи */
+
+input:checked{
+  border: 2px solid goldenrod;
+  background-color: gray;
+  font-size: 50px;
+}
+
+/*! це коли в інпуті зарання включений checked */
+input:default{
+  background-color: #701818;
+}
+input:default {
+  box-shadow: 0 0 2px 1px coral;
+}
+input:default + label {
+  color: coral;
+}
+
+/*!1 :disabled - писати стилі до інпутів які є disabled */
+/* input:disabled{
+  opacity: 0.5;
+} */
+/*!2 :enabled - вибирає увімкненні елементи */
+/* input:enabled{
+  border: 10px solid black;
+} */
+
+
+/*! :empty - елементи які пусті */
+p:empty{
+  display: none;
+}
+
+
+/* :first - вибирати 1 ел в межах батьківського елемента */
+/* 
+.testP p :first{
+  font-weight: 900;
+  color: red;
+} */
+
+/*! :first-child - вибирати 1 ел в межах дочірній ел */
+/* .testP p:first-child{
+  font-weight: 900;
+  color: red;
+} */
+
+/*! :last-child - вибирати останій ел в межах дочірній ел */
+/* .testP p:last-child{
+  font-weight: 900;
+  color: red;
+} */
+
+/*! fitst-of-type - вибирає перший елемент по типу  */
+.testP p:first-of-type{
+  font-weight: 900;
+  color: red;
+}
+
+/*! last-of-type - вибирає останій елемент по типу  */
+
+.testP p:last-of-type{
+  font-weight: 900;
+  color: red;
+}
+
+
+/*!:nth-child(n) - вибирає ел n-й дочірній */
+ol li:nth-child(2n){
+  color:rgb(0, 255, 106);
+}
+
+/*!:nth-last-child(n) - вибирає ел n-й дочірній p кінця*/
+ol li:nth-last-child(1){
+  font-size: 20px;
+}
+
+
+/*! nth-of-type() - вибрати ел по типу з початку*/
+.testP p:nth-of-type(1){
+  font-size: 40px;
+}
+
+/*! nth-last-of-type() - вибрати ел по типу з кінця*/
+
+.testP p:nth-last-of-type(1){
+  font-size: 40px;
+}
+

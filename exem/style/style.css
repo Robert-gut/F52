@@ -56,7 +56,7 @@ main:hover .w_all{
 
 /* /////////////////////////////////////////////////////////////////////// */
 
-div{
+/* div{
   width: 600px;
   background-color: #ccc;
   padding: 5px;
@@ -118,4 +118,30 @@ div:hover .right-block{
   position: absolute;
   left: 600px;
   top: -10px;
+} */
+
+
+/* /////////////////////////////////////////////// */
+div{
+  display: flex;
+}
+
+
+button{
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+span{
+  border: 1px solid black;
+  border-radius: 2px;
+  display: block;
+  height: 78px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }

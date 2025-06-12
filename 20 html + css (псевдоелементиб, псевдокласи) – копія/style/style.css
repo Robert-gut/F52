@@ -1,0 +1,40 @@
+/* p::before{
+  content: 'ПЧАТОК ТЕКСТА ';
+}
+
+p::after{
+  content: ' КІНЕЦЬ ТЕКСТА';
+} */
+
+
+/* p::first-line{
+  color: blue;
+} */
+
+/* p::first-letter{
+  font-size: 45px;
+  color: red;
+  font-weight: 900;
+} */
+
+
+/*! ::selection  це впливає на виділений текст*/
+
+::selection{
+  color: white;
+  background-color: black;
+}
+
+
+::marker{
+  color: greenyellow;
+  font-size: 1.2em;
+}
+
+
+input::placeholder{
+  color:blue;
+  font-style: italic;
+  font-size: 12px;
+  text-transform: uppercase;
+}
