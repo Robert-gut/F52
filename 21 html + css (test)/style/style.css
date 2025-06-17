@@ -1,0 +1,33 @@
+
+p{
+  /* writing-mode: vertical-lr; */
+  /* visibility: hidden; */
+  /* user-select: all; */
+  /* user-select: none; */
+  cursor: pointer;
+}
+
+
+/*! Скрол бар */
+
+*{
+  /* scrollbar-width: ; */
+  /* scrollbar-color: blue orange; */
+}
+
+*::-webkit-scrollbar{
+  width: 122px;
+}
+
+*::-webkit-scrollbar-track{
+  background: green;
+}
+
+*::-webkit-scrollbar-thumb{
+  background-color: blue;
+  border-radius: 20px;
+  border: 6px solid orange;
+}
+
+
+
