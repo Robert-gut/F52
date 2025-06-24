@@ -133,3 +133,9 @@ const num2 = +prompt('enter your namber 2')
 alert(num1 + num2)
 
 // document.writeln(num1 + num2)
+
+const name = 'robert'
+
+// alert(`test test ${name} test`)
+// alert(`Hello ${name} !`)
+alert('Hello ' + name + ' !')
