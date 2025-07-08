@@ -178,26 +178,45 @@
 // recursion(1000)
 
 
-function generateNestedList(depth, items) {
-  if(depth === 0) return ''
+// function generateNestedList(depth, items) {
+//   if(depth === 0) return ''
 
-  const openTag = `<ul>`
-  const closeTag = `</ul>`
-  let listItem = ''
+//   const openTag = `<ul>`
+//   const closeTag = `</ul>`
+//   let listItem = ''
 
-  for (let i = 0; i < items; i++) {
-    listItem += `<li>${generateNestedList(depth - 1, items)}</li>`
-  }
+//   for (let i = 0; i < items; i++) {
+//     listItem += `<li>${generateNestedList(depth - 1, items)}</li>`
+//   }
 
-  return `${openTag}${listItem}${closeTag}`
-}
+//   return `${openTag}${listItem}${closeTag}`
+// }
 
-const nestedList = generateNestedList(2,5)
+// const nestedList = generateNestedList(2,5)
 
-console.log('✌️nestedList --->', nestedList);
+// console.log('✌️nestedList --->', nestedList);
 
 
 //* ////////////////////////////////////////////////////////////////////////////////////
 
+function fibonacci(count){
+  if(count < 0) {
+    return 'error'
+  } else if(count === 0){
+    return []
+  } else if (count === 1){
+    return [0]
+  }
+
+  let startValue = [0, 1]
+
+  for (let i = 2; i < count; i++) {
+    const nextValue = startValue[i - 1] + startValue[i - 1] 
+    startValue.push(nextValue)
+  }
+
+  return startValue
+}
 
 
+console.log(fibonacci(10));

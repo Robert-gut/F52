@@ -92,16 +92,51 @@
 
 // /////////////////////////////////////////////////////////
 
-const password = prompt('Enter password')
-const confirmPassword = prompt('Enter confirm password')
+// const password = prompt('Enter password')
+// const confirmPassword = prompt('Enter confirm password')
 
 
-if(password.length < 8 || confirmPassword.length < 8){
-  console.log('Less then 8');
-} else if(password.length > 16 || confirmPassword.length > 16){
-  console.log('More then 16');
-} else if (password === confirmPassword){
-  console.log('Welcome!');
-} else{
-  console.log('Diferent passwords');
-}
+// if(password.length < 8 || confirmPassword.length < 8){
+//   console.log('Less then 8');
+// } else if(password.length > 16 || confirmPassword.length > 16){
+//   console.log('More then 16');
+// } else if (password === confirmPassword){
+//   console.log('Welcome!');
+// } else{
+//   console.log('Diferent passwords');
+// }
+
+// ////////////////////////////////////////////////////////////////////////////////
+
+// function month(){
+//   const monthNumber = +document.querySelector('.monthNumber').value
+  
+//   if(monthNumber === 1 || monthNumber === 2 || monthNumber === 12){
+//     console.log('Winter!');
+//   }
+//   else if(monthNumber === 3 || monthNumber === 4 || monthNumber === 5){
+//     console.log('Spring!');
+//   }
+//   else if(monthNumber === 6 || monthNumber === 7 || monthNumber === 8){
+//     console.log('Summer!');
+//   }
+//   else if(monthNumber === 9 || monthNumber === 10 || monthNumber === 11){
+//     console.log('Autumn!');
+//   }
+//   else{
+//     console.log('Invalid input');
+//   }  
+// }
+
+//! тернальний оператор (умову ? ifTrue : ifFalse)
+
+const age = +prompt('How old are you?')
+
+// if(age >= 18){
+//   console.log('Іди голосуй!!');
+// } else {
+//   console.log('Ти ще маленький');
+// }
+
+age >= 18 ? console.log('Іди голосуй!!') : console.log('Ти ще маленький')
+

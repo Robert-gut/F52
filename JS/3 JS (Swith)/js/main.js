@@ -225,27 +225,70 @@
 // }
 
 
-const select = document.getElementById('bg')
-const body = document.body
+// const select = document.getElementById('bg')
+// const body = document.body
 
-select.addEventListener('change', () => {
-  const selectedValue = select.value
+// select.addEventListener('change', () => {
+//   const selectedValue = select.value
 
-  switch (selectedValue){
-    case 'blue':
-      body.style.background = 'blue'
-      break
-    case 'green':
-      body.style.background = 'green'
-      break
-    case 'red':
-      body.style.background = 'red'
-      break
-    case 'yellow':
-      body.style.background = 'yellow'
-      break
-    default:
-      body.style.background = 'black'
+//   switch (selectedValue){
+//     case 'blue':
+//       body.style.background = 'blue'
+//       break
+//     case 'green':
+//       body.style.background = 'green'
+//       break
+//     case 'red':
+//       body.style.background = 'red'
+//       break
+//     case 'yellow':
+//       body.style.background = 'yellow'
+//       break
+//     default:
+//       body.style.background = 'black'
+//   }
+// })
+
+////////////////////////////////////////////////////////////////
+
+//! next day
+
+let day = +prompt('day')
+let month = +prompt('month')
+let year = +prompt('year')
+
+day++
+
+if( month === 1 || 3 || 5 || 7 || 8 || 10 || 12){
+  if(day > 31){
+    day = 1
+    month++
   }
-})
+} else if(month === 4 || 6 || 9 || 11){
+  if(day > 30){
+    day = 1
+    month++
+  }
+} else {
+  if((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0){
+    if(day > 29){
+      day = 1
+      month++
+    }
+  }else{
+    if(day > 28){
+      day = 1
+      month++
+    }
+  }
+}
+
+if(month > 12){
+  month = 1
+  year++
+}
+
+console.log(`next day ${day}:${month}:${year}`);
+
+
 
