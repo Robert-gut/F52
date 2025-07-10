@@ -293,3 +293,44 @@ for (let index = 15; index > 0; index--) {
   
   
 }
+
+
+///////////////////////////////////////////// dz ////////////////////////////////
+
+// function range(a, b){
+//   for (let i = 0; i <= b; i++) {
+//     let divisors = ''
+//     let divisorCount = 0
+//     for (let j = 1; j <= i; j++) {
+//       if(i % j === 0){
+//         divisors += j + ' '
+//         divisorCount++
+//       }
+//     }
+//     console.log(`${i} => ${divisors} => ${divisorCount}`);
+//   }
+// }
+
+// range(10, 30)
+
+
+// ///////////////////////////////////////////////////////
+
+// const simple = (num) => {
+//   let res = ''
+//   for (let i = 3; i <= num; i++) {
+//     let isSimple = true
+//     for (let j = 2; j < i; j++) {
+//       if(i % j === 0){
+//         isSimple = false
+//         break
+//       }
+//     }
+//     if(isSimple){
+//       res += `${i} `
+//     }
+//   }
+//   return res
+// }
+
+// console.log(simple(100));
