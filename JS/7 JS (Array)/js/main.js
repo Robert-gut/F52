@@ -129,15 +129,107 @@
 // console.log('✌️cars --->', cars);
 
 //! ВИДАЛЕННЯ ЕЛЕМЕНТІВ В МАСИВІ
-const cars = ['Audi', 'MB', 'BMW']
-console.log('✌️cars --->', cars);
+// const cars = ['Audi', 'MB', 'BMW']
+// console.log('✌️cars --->', cars);
 
 //* POP() видаляє елмент з кінеця масива і вертає видалений елемент
 
-cars.pop();
-console.log('✌️cars --->', cars);
+// cars.pop();
+// console.log('✌️cars --->', cars);
 
 //* SHIFT() видаляє елмент з початку масива і вертає видалений елемент
 
-cars.shift();
-console.log('✌️cars --->', cars);
+// cars.shift();
+// console.log('✌️cars --->', cars);
+
+
+//! ////////////////////////////////// 2 day //////////////////////////////////////
+//* заміну, видалення, додавання ел в певний індекс
+
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+//переприсвоїли
+// cars[2] = 'test'
+// console.log('✌️cars --->', cars);
+//видалення (проблема що при видаленні залишається пустий індекс)
+// delete cars[2]
+// console.log('✌️cars --->', cars);
+// console.log('✌️cars --->', cars[2]);
+
+//! .SPLICE() - видаляти, редагувати і добавляти ел => масив видалених ел
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+
+//?1 ВИДАЛЕННЯ ЕЛ (start, к-ть ел)
+// cars.splice(3,2)
+// console.log('✌️cars --->', cars);
+
+//*return - масив видалених елементів 
+// const delCars = cars.splice(3,2)
+// console.log('✌️delCars --->', delCars);
+
+//? 2 ЗАМІНА ЕЛ АБО РЕДАГУВАННЯ ЕЛ
+// cars.splice(2,1,'Bentley')
+// console.log('✌️cars --->', cars);
+
+// cars.splice(3,2, 'Citroen', 'Fiat', 'Peugeot')
+// console.log('✌️cars --->', cars);
+
+//? 3 ДОДАВАННЯ НОВОГО ЕЛ В МАСИВ
+// cars.splice(2,0,'Mazda')
+// console.log('✌️cars --->', cars);
+
+/////////////////////////
+// cars.splice(-1,1)//з кінця
+// console.log('✌️cars --->', cars);
+/////////////////////////
+
+//* 2-а методи копіювання
+//!1 SLICE() - копіює весь або частину масива і вертає масив копію
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+
+// const copySlice = cars.slice()//1копіюємо весь масив
+// const copySlice = cars.slice(0,4)//2копіюємо чатину масива
+// console.log('copySlice --->', copySlice);
+
+//!2 .CONCAT() копіювання всього масива з додавання нових ел і вертає новий масив
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+
+// const wag = ['Lamborgini', 'Bugatti', 'Seeat']
+
+// const copyConCat = cars.concat('VW','Mazda', wag)
+// console.log('✌️copyConCat --->', copyConCat);
+
+
+// ...............................................................
+// const arr1 = [1,2,3]
+// const arr2 = [4,5,6]
+// const arr3 = [7,8,9]
+
+// const arr = arr1.concat(arr2, arr3)
+// console.log('✌️arr --->', arr);
+
+// console.log([...arr1,...arr2,...arr3]);
+
+// ...............................................................
+
+// const myArray = Array.from({ length: 1000 }, () => Math.random());
+
+// function data(arr, count) {
+//   let minArr = []
+//   const allArrays = []
+//   for (let i = 0; i < arr.length; i++) {
+//     minArr.push(arr[i])
+//     if(minArr.length === count) {
+//       allArrays.push(minArr)
+//       minArr = []
+//     }
+//   }
+//   return allArrays;
+// }
+
+// console.log(data(myArray, 50));
+
+// ...............................................................
