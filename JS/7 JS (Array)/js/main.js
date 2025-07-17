@@ -233,3 +233,154 @@
 // console.log(data(myArray, 50));
 
 // ...............................................................
+
+
+//! ///////////////////////////// day 3 /////////////////////////////
+
+//? ПОШУК ЕЛЕМЕНТІВ В МАСИВІ 
+
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+
+//! 1 .INDEXOF() - вертє перший знайдений ел його індекс або -1 якщо нічого не знайдено
+
+
+// console.log(cars.indexOf('Ferarri'));//-1
+// console.log(cars.indexOf('MB'));//1
+// console.log(cars.indexOf('Audi'));//1
+
+// console.log(cars.indexOf('BMW', 3));//-1
+
+//* .LASTINDEXOF() - ПРАЦЮЄ ЯК INDEXOF() АЛЕ ШУКАЄ З КІНЦЯ
+// console.log(cars.lastIndexOf('BMW'));
+
+//! 2 .INCLUDES() - вертає true якщо ел знайдений і false якщо ні 
+
+// console.log(cars.includes('MB'));//true
+// console.log(cars.includes('BMW'));//true
+// console.log(cars.includes('Renault'));//true
+// console.log(cars.includes('Ferarri'));//false
+
+// console.log(cars.includes('Porshe', 2));//false
+
+
+//? ПОШУК З СКЛАДНІШИМИ ТИПАМИ АБО З ПЕВНИМИ УМОВАМИ !!!!!!!!!!!!!!
+
+// const cars = [
+//   {brand: 'MB', cost: 40000, power: 500, color: 'black'},
+//   {brand: 'BMW', cost: 35000, power: 300, color: 'red'},
+//   {brand: 'Audi', cost: 27000, power: 240, color: 'grey'},
+//   {brand: 'Ford', cost: 10000, power: 178, color: 'darkblue'},
+//   {brand: 'Ferarri', cost: 90000, power: 650, color: 'red'}
+// ]
+
+//! 1 .FIND() - вертає перший знайдений обєкт або undefined якщо нічого не знайдено
+
+// console.log(cars.find(function(car){
+//   return car.cost === 27000
+// }));
+
+// console.log(cars.find(car => car.cost === 27000));//скорочена запис
+// console.log(cars.find(car => car.brand === 'BMW'));
+// console.log(cars.find(car => car.brand.toLowerCase() === 'bmw'));
+
+// console.log(cars.find(car => car.color === 'red' && car.power > 400));
+// console.log(cars.find(car => car.color === 'yellow'));//indefined
+
+//! 2 .FINDINDEX() - вертає індекс пешого знайденого елемента
+
+// console.log(cars.findIndex(car => car.color === 'grey'));//2
+// console.log(cars.findIndex(car => car.color === 'yellow'));//-1
+
+//! 3 .FILTER() - вертає масив знайдених елементів
+
+// console.log(cars.filter(car => car.color === 'red'));
+
+// console.log(cars.filter(car => car.cost < 30000));
+// console.log(cars.filter(car => car.power >= 300));
+// console.log(cars.filter(car => car.power >= 300 && car.color === 'red'));
+
+//? СОРТУВАННЯ ЕЛ В МАСИВІ
+
+//! .SORT() - МЕТОД СОРТУВАННЯ і він сортує оригінальний масив
+
+
+//* STRING
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+
+// console.log(cars.sort());
+
+// const test = ['d', 'b', 'a', 'c']
+// console.log(test.sort())
+
+//* NUMBER
+
+// const numbers = [4,56,7,54,4,3,32,56,6,1,2,5]
+
+// console.log(numbers.sort());
+// console.log(numbers.sort((a,b) => a - b));//1 => 9
+// console.log(numbers.sort((a,b) => b - a));//9 => 1
+
+// console.log([...numbers].sort((a,b) => b - a));//9 => 1
+
+// console.log('✌️numbers --->', numbers);
+
+
+//////////////////////////////////////////////////////////////////////////
+// const cars = [
+//   {brand: 'MB', cost: 40000, power: 500, color: 'black'},
+//   {brand: 'BMW', cost: 35000, power: 300, color: 'red'},
+//   {brand: 'Audi', cost: 27000, power: 240, color: 'grey'},
+//   {brand: 'Ford', cost: 10000, power: 178, color: 'darkblue'},
+//   {brand: 'Ferarri', cost: 90000, power: 650, color: 'red'}
+// ]
+// console.log('✌️cars --->', cars);
+
+// cars.sort((a,b) => a.cost - b.cost)
+// console.log('✌️cars --->', cars);
+//////////////////////////////////////////////////////////////////////////
+
+//! .REVERSE() - ВІДЗЕРКАЛЮЄ МАСИВ
+
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+
+// console.log(cars.reverse());
+
+//? МОТОДИ МОДИФІКУВАННЯ
+
+
+//! .MAP() - ВЕРТАЄ НОВИЙ МАСИВ І ДАЄ МОЖЛИВІСТЬ ЙОГО МОДИФІКУВАТИ
+
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+
+// const newCars = cars.map(car => car.toUpperCase())
+// console.log(newCars);
+
+// const carsSmile = cars.map(car => `🚗 ${car.toUpperCase()} 🚗`)
+// console.log('✌️carsSmile --->', carsSmile);
+
+// console.log(cars.map((car, index, arr) => `${car} => ${index} => ${arr}`));
+
+//! .SPLIT() - розділяє строку по символу і вертає масив
+
+// const text = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid nobis facere corrupti recusandae quisquam excepturi facilis illo ipsum ipsa, voluptas animi, non sit deserunt fugit repellat aperiam voluptatum quidem nemo.'
+
+// console.log(text.split('.'));
+// console.log(text.split(','));
+// console.log(text.split(' '));
+
+// const email = 'superAdmin@gmail.com'
+// console.log(email.split('@')[0]);
+// console.log(email.split('@')[1]);
+
+//! .JOIN() - РОБИТЬ З МАСИВА STRING
+
+// const arrWords = text.split(' ')
+// console.log('✌️arrWords --->', arrWords);
+
+// console.log(arrWords.join());
+// console.log(arrWords.join(' '));
+// console.log(arrWords.join('+++++'));
