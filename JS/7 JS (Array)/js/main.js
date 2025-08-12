@@ -20,7 +20,7 @@
 //     return 1
 //   },
 //   [1,2,3],
-//   {name: 'Anna'}
+//   {name: 'Anna'},
 // ]
 // console.log('✌️arrType --->', arrType);
 
@@ -384,3 +384,58 @@
 // console.log(arrWords.join());
 // console.log(arrWords.join(' '));
 // console.log(arrWords.join('+++++'));
+
+//! FOREACH() - ПРОСТО ПРОХОДИТЬСЯ ПО КОЖНОМУ ЕЛЕМЕНТУ МАСИВА ЯК ПРОСТИЙ ЦИКЛ
+
+// const cars = ['Porshe', 'MB', 'BMW', 'Skoda', 'Audi', 'Renault']
+// console.log('✌️cars --->', cars);
+
+// for (let i = 0; i < cars.length; i++) {
+//   console.log(cars[i]);
+// }
+
+// for (const el of cars) {
+//   console.log(el);
+// }
+
+// cars.forEach((car)=>{
+//   console.log(car);
+// })
+
+// cars.forEach((item, index, array) => {
+//   console.log(`${item} => ${index} => ${array}`);
+// })
+
+//! reducer() / reduceRight()
+
+// const numbers = [1,2,3,4,5,55,564,54,87,9898]
+// console.log('✌️numbers --->', numbers);
+
+// let suma = 0
+// numbers.forEach(el => {
+//   suma += el
+// })
+// console.log('✌️suma --->', suma);
+
+
+// const reducer = numbers.reduce((prevValue, item, index, arr) => {
+//   return prevValue + item
+// }, 0)
+
+// console.log('✌️reducer --->', reducer);
+
+//! ПЕРЕВІРКА НА МАСИВ (ТОБТО ЧИ ДАНИЙ ЕЛ Є МАСИВОМ) Array.isArray()
+
+
+console.log(typeof 12);
+console.log(typeof '12');
+console.log(typeof true);
+console.log(typeof undefined);
+console.log(typeof null);
+
+
+console.log(typeof {name: 'Rober'});
+console.log(typeof [1,2,3]);
+
+console.log(Array.isArray([1,2,3]));
+console.log(Array.isArray({name: 'Rober'}));
