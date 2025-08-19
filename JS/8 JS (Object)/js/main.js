@@ -170,3 +170,255 @@
 // for (const key in car) {
 //   console.log(`${key.toUpperCase()} => ${car[key]}`); 
 // }
+
+//! методи обєктів і this
+
+// const car = {
+//   brand: 'BMW',
+//   model: 'm5',
+//   age: 5,
+//   color: 'black',
+//   power: 550,
+//   cost: 50000,
+//   interior: 'yellow',
+//   showInfo: function(){
+//     console.log(`${this.brand} ${this.model} ${this.color}`);
+//   }
+// }
+// console.log('✌️car --->', car);
+
+// car.showInfo()
+
+//////////////////////////////////////////////////////////////////
+
+// const cars = [
+//   {
+//     brand: 'BMW',
+//     model: 'm3',
+//     age: 5,
+//     color: 'black',
+//     power: 550,
+//     cost: 50000,
+//     interior: 'yellow',
+//     showInfo: function(){
+//       console.log(`${this.brand} ${this.model} ${this.color}`);
+//     }
+//   },
+//   {
+//     brand: 'BMW',
+//     model: 'm4',
+//     age: 5,
+//     color: 'black',
+//     power: 550,
+//     cost: 50000,
+//     interior: 'yellow',
+//     showInfo: function(){
+//       console.log(`${this.brand} ${this.model} ${this.color}`);
+//     }
+//   },
+//   {
+//     brand: 'BMW',
+//     model: 'm5',
+//     age: 5,
+//     color: 'black',
+//     power: 550,
+//     cost: 50000,
+//     interior: 'yellow',
+//     showInfo: function(){
+//       console.log(`${this.brand} ${this.model} ${this.color}`);
+//     }
+//   }
+// ]
+
+// cars.forEach(car => {
+//   console.log(car);
+//   car.showInfo()
+// })
+
+////////////////////////////////////////////////////////////////// 2 /////////////////////////////////////////
+
+//? методи і копіювання обєктів
+
+// const car = {
+//   brand: 'MB',
+//   model: 'gla',
+//   maxSpead: 300
+// }
+
+// const newCar = car
+
+// newCar.maxSpead = 100
+// console.log('✌️car --->', car);
+// console.log('✌️newCar --->', newCar);
+//* не працює
+
+//! 1 object.assign()
+
+// const car = {
+//   brand: 'MB',
+//   model: 'gla',
+//   maxSpead: 300
+// }
+
+// const newCar = Object.assign({}, car)
+
+// newCar.maxSpead = 100
+// console.log('✌️car --->', car);
+// console.log('✌️newCar --->', newCar);
+
+//! 2 (...)
+
+// const car = {
+//   brand: 'MB',
+//   model: 'gla',
+//   maxSpead: 300
+// }
+
+// const newCar = {...car}
+
+// newCar.maxSpead = 100
+// console.log('✌️car --->', car);
+// console.log('✌️newCar --->', newCar);
+
+//! ВЕЛИКИЙ МІНУ ЦІХ 2 ВАРІАНТІВ
+// 1
+// const car = {
+//   brand: 'MB',
+//   model: 'gla',
+//   maxSpead: {
+//     km: 300,
+//     ml: 188
+//   }
+// }
+
+
+// const newCar = Object.assign({}, car)
+
+// newCar.maxSpead.km = 100
+// newCar.maxSpead.ml = 60
+// console.log('✌️car --->', car.maxSpead);
+// console.log('✌️newCar --->', newCar.maxSpead);
+
+// 2
+// const car = {
+//   brand: 'MB',
+//   model: 'gla',
+//   maxSpead: {
+//     km: 300,
+//     ml: 188
+//   }
+// }
+
+// const newCar = {...car}
+
+// newCar.maxSpead.km = 100
+// newCar.maxSpead.ml = 60
+// console.log('✌️car --->', car.maxSpead);
+// console.log('✌️newCar --->', newCar.maxSpead);
+
+//! глибока вкладинісьть
+
+// const car = {
+//   brand: 'MB',
+//   model: 'gla',
+//   maxSpead: {
+//     km: 300,
+//     ml: 188
+//   },
+//   productionYear: new Date('2019-05-12')
+// }
+
+// const newCarJson = JSON.stringify(car)
+// console.log('✌️car --->', car);
+// console.log('✌️newCarJson --->', newCarJson);
+
+// const newCar = JSON.parse(newCarJson)
+// console.log('✌️newCar --->', newCar);
+
+//* скороточена запис
+
+// const newCar = JSON.parse(JSON.stringify(car))
+
+// newCar.maxSpead.km = 100
+// newCar.maxSpead.ml = 60
+// console.log('✌️car --->', car.maxSpead);
+// console.log('✌️newCar --->', newCar.maxSpead);
+
+//! з чим погано працює JSON
+
+// const car = {
+//   brand: 'MB',
+//   model: 'gla',
+//   maxSpead: {
+//     km: 300,
+//     ml: 188
+//   },
+//   productionYear: new Date('2019-05-12'),
+//   showInfo: function(){
+//     console.log(`${this.brand} ${this.model}`);
+//   }
+// }
+
+// const newCar = JSON.parse(JSON.stringify(car))
+
+// console.log('✌️car --->', car.productionYear.getFullYear());
+// console.log('✌️newCar --->', newCar.productionYear);
+// car.showInfo();
+// newCar.showInfo();
+
+
+//! structuredClone()
+
+// const car = {
+//   brand: 'MB',
+//   model: 'gla',
+//   maxSpead: {
+//     km: 300,
+//     ml: 188
+//   },
+//   productionYear: new Date('2019-05-12'),
+// }
+
+// const newCar = structuredClone(car)
+
+// console.log('✌️car --->', car.productionYear.getFullYear());
+// console.log('✌️newCar --->', newCar.productionYear.getFullYear());
+
+//? методи OBJECT
+
+//! Object.keys() - вертає масив стрінгів а саме клюжчів обєкта
+
+const car = {
+  brand: 'BMW',
+  model: 'm5',
+  age: 5,
+  color: 'black',
+  power: 550,
+  cost: 50000,
+  interior: 'yellow',
+}
+
+const objKeys = Object.keys(car)
+console.log('✌️objKeys --->', objKeys);
+
+//! Object.values() - вертає масив всіх value
+
+const objValues = Object.values(car)
+console.log('✌️objValues --->', objValues);
+
+//! Object.entries() - вертає масив масивів з ключом і значенням
+
+const objEnries = Object.entries(car)
+console.log('✌️objEnries --->', objEnries);
+
+objEnries.forEach(el => console.log(el[0] + '=>' + el[1]))
+
+//! Object.defineProperty() - для добавляння нової властивості в обєкт
+
+const obj = Object.defineProperty(car, 'clearance', {
+  value: 35,
+  enumerable: true
+})
+console.log('✌️obj --->', obj);
+
+
