@@ -1,0 +1,30 @@
+body{
+  background-color: #222;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameContainer{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 2px solid white;
+  background-color: #000;
+}
+
+.snakeSegment{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+}
+.food{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
