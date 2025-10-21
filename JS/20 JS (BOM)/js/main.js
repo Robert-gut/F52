@@ -135,3 +135,45 @@ function displayRecordings() {
 
 startButton.addEventListener('click', startRecording)
 stopButton.addEventListener('click', stopRecording)
+
+
+//! Обєкт screen
+
+// console.log('Screen Width', screen.width);
+// console.log('Screen Height', screen.height);
+
+// console.log('Available Screen Width', screen.availWidth);
+// console.log('Available Screen Height', screen.availHeight);
+
+// console.log('Color Depth', screen.colorDepth);
+// console.log('Pixel Depth', screen.pixelDepth);
+
+// console.log('Screen Orientation:', screen.orientation);
+// console.log('Screen Orientation:', screen.orientation.type);
+
+
+
+//! Обєкт history
+
+// console.log(history);
+
+// ! history.back()
+//! history.forward()
+// ! history.go(2)
+//! history.go(-2)
+
+
+//! обєкт location
+
+// console.log('Current Url:', location.href);
+// console.log('Current Protocol:', location.protocol);
+// console.log('Current host:', location.host);
+// console.log('Current hostName:', location.hostname);
+// console.log('Current port:', location.port);
+// console.log('Current pathname:', location.pathname);
+// console.log('Current hash:', location.hash);
+// console.log('Current search:', location.search);
+
+// location.assign('https://google.com')
+
+
