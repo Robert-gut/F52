@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pubg Shooting Game</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <h1>Pubg Shooting Game</h1>
+
+    <div class="settings">
+      <label for="helmet-level">Helmet level</label>
+      <select id="helmet-level">
+        <option value="0">No Helmet</option>
+        <option value="1">Level 1</option>
+        <option value="2">Level 2</option>
+        <option value="3">Level 3</option>
+      </select>
+
+      <label for="vest-level">Vest level</label>
+      <select id="vest-level">
+        <option value="0">No Vest</option>
+        <option value="1">Level 1</option>
+        <option value="2">Level 2</option>
+        <option value="3">Level 3</option>
+      </select>
+
+      <button id="start-game">Start Game</button>
+    </div>
+
+    <p id="health">Health: 100</p>
+    <p id="damage-info">Click on the target to shoot!</p>
+
+    <div id="game-container">
+      <img id="target-img" src="./img/зображення.png" alt="PUBG Character">
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
