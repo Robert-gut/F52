@@ -1,6 +1,12 @@
 const messagesDiv = document.getElementById('messages')
-const websocketUrl = 'wss://fstream.binance.com/ws/ethusdt@aggTrade'
+const websocketUrl = `wss://fstream.binance.com/ws/${}usdt@aggTrade`
 let websocket
+
+function genUrl(value){
+  return `wss://fstream.binance.com/ws/${value}usdt@aggTrade`
+}
+
+genUrl('btc')
 
 function displayMessage(message){
   const p = document.createElement('p')

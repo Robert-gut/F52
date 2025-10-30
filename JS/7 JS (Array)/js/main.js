@@ -408,19 +408,19 @@
 
 //! reducer() / reduceRight()
 
-// const numbers = [1,2,3,4,5,55,564,54,87,9898]
-// console.log('✌️numbers --->', numbers);
+const numbers = [1,2,3,4,5,55,564,54,87,9898]
+console.log('✌️numbers --->', numbers);
 
-// let suma = 0
-// numbers.forEach(el => {
-//   suma += el
-// })
-// console.log('✌️suma --->', suma);
+let suma = 0
+numbers.forEach(el => {
+  suma += el
+})
+console.log('✌️suma --->', suma);
 
 
-// const reducer = numbers.reduce((prevValue, item, index, arr) => {
-//   return prevValue + item
-// }, 0)
+const reducer = numbers.reduce((prevValue, item, index, arr) => {
+  return prevValue + item
+}, 0)
 
 // console.log('✌️reducer --->', reducer);
 
