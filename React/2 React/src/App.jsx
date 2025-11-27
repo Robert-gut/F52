@@ -8,9 +8,10 @@ import SuperButton from './components/SuperButton/SuperButton'
 function App() {
   return (
     <>
-      <h1>React</h1>
+      <h1 className='text-3xl font-bold underline'>React</h1>
       <h2>Elements:</h2>
-      <Element1/>
+      <Element1 color={'red'}/>
+      <Element1 color={'yellow'}>Element 1 test</Element1>
       <Element2/>
       <Element3/>
 
@@ -21,7 +22,7 @@ function App() {
       <SuperButton title='Censel' color='white' bg='black'/>
 
 
-      <SearchInput labelName='Person' placeholder='Enter name'/>
+      {/* <SearchInput labelName='Person' placeholder='Enter name'/> */}
     </>
   )
 }
