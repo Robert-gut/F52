@@ -1,8 +1,9 @@
 import * as Yup from 'yup'
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import {v4 as uuidv4} from 'uuid'
+import { useNavigate } from "react-router-dom";
 
-export default function NewContact(){ 
+export default function NewContact({ onNewContact }){ 
   const initialValues = {
     id: uuidv4(),
     firstName: '',
@@ -25,8 +26,10 @@ export default function NewContact(){
     favorite: Yup.boolean(),
   })
 
+  const navigate = useNavigate()
   const handleSubmit = (value) =>{
-    console.log(value);
+    onNewContact(value)
+    navigate('/')
   }
 
   return(

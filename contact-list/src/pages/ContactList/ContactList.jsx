@@ -1,7 +1,7 @@
 import ContactItem from "../../components/ContactItem/ContactItem";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
-export default function ContactList(){
+export default function ContactList({ stor }){
   return(
     <main className="shadow bg-white container rounded mt-4">
       <div className="row">
@@ -9,7 +9,7 @@ export default function ContactList(){
           <Sidebar/>
         </div>
         <div className="col-9">
-          <ContactItem/>
+          <ContactItem stor={ stor }/>
         </div>
       </div>
     </main>
