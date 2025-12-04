@@ -17,13 +17,35 @@ function App() {
         avatar: "//sdf.png",
         email: "ADMIN@ADMIN.COM",
         favorite: true,
-        firstName: "Robert",
+        firstName: "Robssdfgsdfgert",
         gender: "Women",
-        id: "0ade6e5f-07ef-4e72-85de-b940aabea656",
+        id: "0ade6e5f-07ef-4ed2-85de-b940aabea656",
         lastName: "Barnabishvili",
         phone: "0680423116",
         status :"Family",
-      }
+      },
+      {
+        avatar: "//sdf.png",
+        email: "ADMIN@ADMIN.COM",
+        favorite: true,
+        firstName: "Robsdfgsdfgerert",
+        gender: "Women",
+        id: "0ade6e5f-07ef-4e72-85de-b940aafea656",
+        lastName: "Barnabishvili",
+        phone: "0680423116",
+        status :"Family",
+      },
+      {
+        avatar: "//sdf.png",
+        email: "ADMIN@ADMIN.COM",
+        favorite: true,
+        firstName: "Robert",
+        gender: "Women",
+        id: "0ade6e5f-07ef-4e72-85de-b940agbea656",
+        lastName: "Barnabishvili",
+        phone: "0680423116",
+        status :"Family",
+      },
     ]
   )
   
