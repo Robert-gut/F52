@@ -1,26 +1,29 @@
-export default function ContactItem({ stor }){
+import { Link } from "react-router-dom";
+
+export default function ContactItem({ stor, onDeleteContact }){
  
   return(
     <table className="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Status</th>
+          <th scope="col"></th>
+          <th className="text-center" scope="col">Name</th>
+          <th className="text-center" scope="col">Email/Phone</th>
+          <th className="text-center" scope="col">Status</th>
+          <th className="text-center" scope="col">Edit/Del</th>
         </tr>
       </thead>
       <tbody>
-        {stor.map((contact, index) => (
+        {stor.map(contact => (
           <tr key={contact.id}>
-            <th scope="row">{++index}</th>
-            <td>{contact.firstName}</td>
-            <td>{contact.lastName}</td>
-            <td>{contact.email}</td>
-            <td>{contact.phone}</td>
-            <td>{contact.status}</td>
+            <td><img className="rounded-circle" src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt="avatar" /></td>
+            <td className="fs-5 align-middle text-center">{contact.firstName}<br/>{contact.lastName}</td>
+            <td className="fs-5 align-middle text-center">{contact.email}<br/>{contact.phone}</td>
+            <td className="fs-6 align-middle text-center">{contact.status}</td>
+            <td className="fs-5 align-middle text-center">
+              <Link to={`/update-contact`}><button>Edit</button></Link>
+              <button onClick={() => onDeleteContact(contact.id)}>Delete</button>
+            </td>
           </tr>
         ))}
       </tbody>
