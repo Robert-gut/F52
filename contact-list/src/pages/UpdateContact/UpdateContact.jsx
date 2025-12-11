@@ -1,5 +1,92 @@
-export default function UpdateContact(){
+// import './NewContact.scss';
+import {Formik, Form, Field, ErrorMessage} from 'formik'
+import { useNavigate, useParams  } from "react-router-dom";
+import { contactValidationSchema } from '../../validation/validation';
+
+export default function UpdateContact({stor, onUpdateContact}){ 
+  const {id} = useParams()
+  const navigate = useNavigate()
+
+  const {firstName, lastName, phone, email, avatar, gender, status,favorite} = stor.contacts.find(contact => contact.id === id )
+
+  const initialValues = {
+    id: id,
+    firstName: firstName,
+    lastName: lastName,
+    phone: phone,
+    email: email,
+    avatar: avatar,
+    gender: gender,
+    status: status,
+    favorite: favorite,
+  }
+
+  const handleSubmit = (value) =>{
+    onUpdateContact(value)
+    navigate('/')
+  }
+
   return(
-    <h1>UpdateContact</h1>
+    <main className="shadow bg-white container rounded mt-4 addPage">
+          <Formik initialValues={initialValues} validationSchema={contactValidationSchema} onSubmit={handleSubmit}>
+            {({ isSubmitting }) => (
+              <Form>
+                <h1 className="text-center">Update contact</h1>
+                <hr />
+                <div className='m-4'>
+                  <label htmlFor="firstName">First name</label>
+                  <Field className='form-control fs-5' type='text' name='firstName' id='firstName'/>
+                  <ErrorMessage name='firstName' component='p' className='text-danger position-absolute'/>
+                </div>
+                <div className='m-4'>
+                  <label htmlFor="lastName">Last name</label>
+                  <Field className='form-control fs-5' type='text' name='lastName' id='lastName'/>
+                  <ErrorMessage name='lastName' component='p' className='text-danger position-absolute'/>
+                </div>
+                <div className='m-4'>
+                  <label htmlFor="phone">Phone</label>
+                  <Field className='form-control fs-5' type='text' name='phone' id='phone'/>
+                  <ErrorMessage name='phone' component='p' className='text-danger position-absolute'/>
+                </div>
+                <div className='m-4'>
+                  <label htmlFor="email">Email</label>
+                  <Field className='form-control fs-5' type='text' name='email' id='email'/>
+                  <ErrorMessage name='email' component='p' className='text-danger position-absolute'/>
+                </div>
+                <div className='m-4'>
+                  <label htmlFor="avatar">Avatar</label>
+                  <Field className='form-control fs-5' type='number' min={0} max={99} name='avatar' id='avatar'/>
+                  <ErrorMessage name='avatar' component='p' className='text-danger position-absolute'/>
+                </div>
+                <div className='m-4'>
+                  <label htmlFor="gender">Gender</label>
+                  <Field className='form-control fs-5' as='select' name='gender' id='gender'>
+                    <option value="">Choose gender</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                  </Field>
+                  <ErrorMessage name='gender' component='p' className='text-danger position-absolute'/>
+                </div>
+                <div className='m-4'>
+                  <label htmlFor="status">Status</label>
+                  <Field className='form-control fs-5' as='select' name='status' id='status'>
+                    <option value="">Choose status</option>
+                    <option value="work">Work</option>
+                    <option value="family">Family</option>
+                    <option value="private">Private</option>
+                    <option value="friends">Friends</option>
+                    <option value="others">Others</option>
+                  </Field>
+                  <ErrorMessage name='status' component='p' className='text-danger position-absolute'/>
+                </div>
+                <div className='m-4'>
+                  <label className='form-check-label fs-5' htmlFor="favorite">Favorite</label>
+                  <Field className='form-check-input m-1 fs-4' type='checkbox' name='favorite' id='favorite'/>
+                </div>
+                <button type='submit' className='btn btn-primary btn-lg form-control' disabled={isSubmitting}>Save</button>
+              </Form>
+            )}
+          </Formik>
+    </main>
   )
 }

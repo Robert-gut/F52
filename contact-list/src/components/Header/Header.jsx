@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({searchBySymbols}) {
   return (
     <Navbar expand="lg"  className="shadow bg-white container rounded mt-3">
       <Container fluid>
@@ -20,8 +20,8 @@ export default function Header() {
             placeholder="Search"
             className="me-2"
             aria-label="Search"
+            onChange={e => searchBySymbols(e.target.value)}
           />
-          <Button variant="outline-success">Search</Button>
         </Form>
       </Container>
     </Navbar>

@@ -7,11 +7,11 @@ export default function Sidebar({stor}){
     others: 0,
   }
 
-  stor.forEach(contact => {
+  stor.contacts.forEach(contact => {
     statusCounts[contact.status] += 1
   });
 
-  const totalContacts = stor.length
+  const totalContacts = stor.contacts.length
 
   return(
     <aside className="container border-end">
