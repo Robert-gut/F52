@@ -11,6 +11,10 @@ export default function EditContactStatus(){
   const {statusName} = useParams()
   const status = useSelector(state => state.contactStatuses[statusName])
 
+  if (!status) {
+    return <div>Status not found</div>
+  }
+
   const initialValues = {
     statusName: statusName,
     bg: status.bg,
@@ -23,7 +27,7 @@ export default function EditContactStatus(){
 
   return(
     <main className="shadow bg-white container rounded mt-4 addPage">
-          <Formik initialValues={initialValues} validationSchema={statusesValidationSchema} onSubmit={handleSubmit}>
+          <Formik enableReinitialize={true} initialValues={initialValues} validationSchema={statusesValidationSchema} onSubmit={handleSubmit}>
             {({ isSubmitting }) => (
               <Form>
                 <h1 className="text-center">Edit contact status</h1>

@@ -146,30 +146,30 @@ const reducer = (state = intialState, action ) => {
       }
     case ADD_STATUS:
       if(state.contactStatuses[action.payload.statusName]){
-        console.warn(`Status ${action.payload.statusName} does not exists.`)
+        console.warn(`Status ${action.payload.statusName} already exists.`)
         return state
       }
       return {
         ...state,
         contactStatuses: {
           ...state.contactStatuses,
-          [action.payload.statusName]: {const: 0, bg: action.payload.bg}
+          [action.payload.statusName]: {count: 0, bg: action.payload.bg}
         }
       }
     case EDIT_STATUS:
-      // if(!state.contactStatuses[action.payload.oldStatus]){
-      //   console.warn(`Status ${action.payload.oldStatus} does not exists.`)
-      //   return state
-      // }
+      if(!state.contactStatuses[action.payload.oldStatus]){
+        console.warn(`Status ${action.payload.oldStatus} does not exist.`)
+        return state
+      }
       const updatedContactStatus = {...state.contactStatuses}
       delete updatedContactStatus[action.payload.oldStatus]
       updatedContactStatus[action.payload.newStatus] = {
-        const: state.contactStatuses[action.payload.oldStatus].count,
+        count: state.contactStatuses[action.payload.oldStatus].count,
         bg: action.payload.newBg
       }
-      const updatedContacts = state.contacts.map(contact => {
+      const updatedContacts = state.contacts.map(contact =>
         contact.status === action.payload.oldStatus ? {...contact, status: action.payload.newStatus} : contact
-      })
+      )
       return{
         ...state,
         contactStatuses: updatedContactStatus,
