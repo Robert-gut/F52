@@ -9,6 +9,7 @@ export default function UpdateContact(){
   const {id} = useParams()
   const {firstName, lastName, phone, email, avatar, gender, status,favorite} = 
   useSelector(state => state.contacts.find(contact => contact.id === id ))
+  const contactStatuses = useSelector(state => state.contactStatuses)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -75,11 +76,9 @@ export default function UpdateContact(){
                   <label htmlFor="status">Status</label>
                   <Field className='form-control fs-5' as='select' name='status' id='status'>
                     <option value="">Choose status</option>
-                    <option value="work">Work</option>
-                    <option value="family">Family</option>
-                    <option value="private">Private</option>
-                    <option value="friends">Friends</option>
-                    <option value="others">Others</option>
+                    {Object.keys(contactStatuses).map((status, index) => (
+                      <option style={{backgroundColor: contactStatuses[status].bg}} key={index} value={status}>{status}</option>
+                    ))}
                   </Field>
                   <ErrorMessage name='status' component='p' className='text-danger position-absolute'/>
                 </div>

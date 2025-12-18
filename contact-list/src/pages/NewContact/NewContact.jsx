@@ -4,12 +4,13 @@ import {v4 as uuidv4} from 'uuid'
 import { useNavigate } from "react-router-dom";
 import { contactValidationSchema } from '../../validation/validation';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/actions';
 
 export default function NewContact(){
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const contactStatuses = useSelector(state => state.contactStatuses)
 
   const initialValues = {
     id: uuidv4(),
@@ -73,11 +74,9 @@ export default function NewContact(){
                   <label htmlFor="status">Status</label>
                   <Field className='form-control fs-5' as='select' name='status' id='status'>
                     <option value="">Choose status</option>
-                    <option value="work">Work</option>
-                    <option value="family">Family</option>
-                    <option value="private">Private</option>
-                    <option value="friends">Friends</option>
-                    <option value="others">Others</option>
+                    {Object.keys(contactStatuses).map((status, index) => (
+                      <option style={{backgroundColor: contactStatuses[status].bg}} key={index} value={status}>{status}</option>
+                    ))}
                   </Field>
                   <ErrorMessage name='status' component='p' className='text-danger position-absolute'/>
                 </div>

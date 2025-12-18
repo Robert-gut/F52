@@ -7,6 +7,11 @@ export const contactValidationSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
   avatar: Yup.string().required('Required'),
   gender: Yup.string().oneOf(['men', 'women'], 'Invalid gender').required('Required'),
-  status: Yup.string().oneOf(['work', 'family', 'private', 'friends', 'others'], 'Invalid status').required('Required'),
+  status: Yup.string().required('Required'),
   favorite: Yup.boolean(),
+})
+
+export const statusesValidationSchema = Yup.object().shape({
+  statusName: Yup.string().min(2, 'Too Short!').max(30, 'Too Long!').required('Required'),
+  bg: Yup.string().required('Required'),
 })
