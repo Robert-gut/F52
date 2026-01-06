@@ -6,7 +6,7 @@ export default function ContactList(){
     <main className="shadow bg-white container rounded mt-4">
       <div className="row">
         <div className="col-3">
-          {/* <Sidebar/> */}
+          <Sidebar/>
         </div>
         <div className="col-9">
           <ContactItem />

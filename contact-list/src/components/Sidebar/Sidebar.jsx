@@ -1,19 +1,25 @@
-import { useSelector } from "react-redux";
+import { useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Sidebar(){
   const contacts = useSelector(state => state.contacts)
-  const statusCounts = {
-    work: 0,
-    family: 0,
-    private: 0,
-    friends: 0,
-    others: 0,
-  }
+  const filter = useSelector(state => state.filter)
+  const contactStatuses = useSelector(state => state.contactStatuses)
+  const dispatch = useDispatch()
 
-  contacts.forEach(contact => {
-    statusCounts[contact.status] += 1
-  });
+  const statusCaunts = useMemo(()=>{
+    const counts = {...contactStatuses}
+    Object.keys(counts).forEach(status => (counts[status].count = 0))
+    contacts.forEach(contact=> {
+      if(counts[contact.status]){
+        counts[contact.status].count++
+      }
+    })
+    return counts
+  }, [contacts, contactStatuses])
 
+  console.log(statusCaunts);
+  
   const totalContacts = contacts.length
 
   return(
@@ -25,26 +31,14 @@ export default function Sidebar(){
               All contact<span>{totalContacts}</span>
             </div>
             <div className="list">
-              <div className="unit">
-                <div className="lab lab-success">Work</div>
-                <span>{statusCounts.work}</span>
-              </div>
-              <div className="unit">
-                <div className="lab lab-primary">Family</div>
-                <span>{statusCounts.family}</span>
-              </div>
-              <div className="unit">
-                <div className="lab lab-danger">Private</div>
-                <span>{statusCounts.private}</span>
-              </div>
-              <div className="unit">
-                <div className="lab lab-warning">Friends</div>
-                <span>{statusCounts.friends}</span>
-              </div>
-              <div className="unit">
-                <div className="lab lab-warning">Others</div>
-                <span>{statusCounts.others}</span>
-              </div>
+              {
+                Object.keys(statusCaunts).map(status => (
+                <div key={status} className="unit">
+                  <div className="lab lab-success">{status}</div>
+                  <span>{statusCaunts[status].count}</span>
+                </div>
+                ))
+              }
             </div>
           </div>
         </div>
