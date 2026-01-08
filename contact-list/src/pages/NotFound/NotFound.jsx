@@ -1,8 +1,9 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext, useCallback, useRef, useReducer } from "react";
 import { Link } from "react-router-dom";
 
 export default function NotFound(){
-
+  console.log('test');
+  
   //! 1 useState() - Зберігання стану
   const [count, setCount] = useState(0)
   const [count1, setCount1] = useState(0)
@@ -32,17 +33,17 @@ export default function NotFound(){
   // const [seconds, setSeconds] = useState(0)
 
   
-  useEffect(()=>{
-    const interval = setInterval(()=>{
-      setSeconds(prevSeconds => prevSeconds + 1)
-    }, 1000)
+  // useEffect(()=>{
+  //   const interval = setInterval(()=>{
+  //     setSeconds(prevSeconds => prevSeconds + 1)
+  //   }, 1000)
 
-    return () => {
-      clearInterval(interval)
-      console.log('clear interval');
-    }
-  },[])
-  console.log(seconds);
+  //   return () => {
+  //     clearInterval(interval)
+  //     console.log('clear interval');
+  //   }
+  // },[])
+  // console.log(seconds);
   //! 3 useContext - отримання значення із контекста
   
   // const ThemeContext = createContext(null)
@@ -99,7 +100,37 @@ export default function NotFound(){
   //! 4  5 хук опитимізації  useMemo() useCallback() 
 
   //! 4 useMome sidebar
- 
+  //! useCallback()
+
+  // const [message, setMessage] = useState('')
+
+  // const handleClick = useCallback(() => {
+  //   setMessage('messages')
+  // },[])
+
+  //! useRef - Змінна яка при update не викликає render
+
+  const ref = useRef(null)
+
+  const focus = () => {
+    ref.current.focus()
+  }
+
+  //! useReducer 
+  function counterReducer(state, action){
+    switch(action.type){
+      case 'increment':
+        return {count: state.count + 1}
+      case 'decrement':
+        return {count: state.count - 1}
+      case 'reset':
+        return {count: 0}
+      default:
+        throw new Error('err')
+    }
+  }
+
+  const [state, dispatch] = useReducer(counterReducer, {count: 0})
   
   return(
     <div className="shadow bg-white container rounded mt-4">
@@ -112,6 +143,11 @@ export default function NotFound(){
       <p>You clicked1 {count1} times</p>
       <button onClick={() => setCount1(prevCount => prevCount + 1)}>+</button>
       <button onClick={() => setCount1(prevCount => prevCount - 1)}>-</button>
+
+        <h3>{state.count}</h3>
+        <button onClick={()=> dispatch({type: 'increment'})}>+</button>
+        <button onClick={()=> dispatch({type: 'decrement'})}>-</button>
+        <button onClick={()=> dispatch({type: 'reset'})}>reset</button>
 
       {/* <p>к-ть сек {seconds}</p> */}
     </div>
