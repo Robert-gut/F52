@@ -138,3 +138,5 @@ describe('Функція <<<greet>>>', () => {
     expect(greet()).toBe('Привіт, Іван!')
   })
 })
+
+[1,2,3].filter((el, index, arr)=> {})

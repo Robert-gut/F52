@@ -206,3 +206,40 @@
 //   }
 // }
 
+///////////////////////////////////////////////
+
+
+// Вхід: nums = [2,7,11,15], target = 9
+//  Вихід: [0,1]
+//  Пояснення: Оскільки nums[0] + nums[1] == 9, ми повертаємо [0, 1].
+// Приклад 2:
+// Вхід: числа = [3,2,4], ціль = 6
+//  Вихід: [1,2]
+// Приклад 3:
+// Вхід: числа = [3,3], ціль = 6
+//  Вихід: [0,1]
+
+const arr = [2,11,15,7]
+const tar = 9
+
+// const twoSum = (nums, target) => {
+//   let num = nums[0]
+//     nums.forEach((el,index)=>{
+//        console.log(num + el === target );
+//     })
+// }
+
+
+
+var twoSum = function(nums, target) {
+  const map = new Map(); // value -> index
+  
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i];
+    if (map.has(diff)) {
+      return [map.get(diff), i];
+    }
+    map.set(nums[i], i);
+  }
+};
+console.log(twoSum(arr, tar));
