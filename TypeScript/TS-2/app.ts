@@ -113,7 +113,7 @@ const user = {
 ////////////////////////////////////////
 // const skills: Array<string> = ['devops', 'dev']
 // const skills: ReadonlyArray<string> = ['devops', 'dev']
-////////////////////////////////////////
+//////////////////////////////////////
 
 //! enum
 
@@ -191,16 +191,16 @@ enum StatusCode {
 
 //! Звуження типів
 
-// function logId(id: string | number | boolean):void{
-//   // console.log(id.toLowerCase()); 
-//   if(typeof id === 'string'){
-//     id.toLowerCase()
-//   } else if(typeof id === 'number'){
-//     console.log(id);
-//   }else{
-//     id
-//   }
-// }
+function logId(id: string | number | boolean):void{
+  // console.log(id.toLowerCase()); 
+  if(typeof id === 'string'){
+    id.toLowerCase()
+  } else if(typeof id === 'number'){
+    console.log(id);
+  }else{
+    id
+  }
+}
 
 
 //2
@@ -232,3 +232,236 @@ function logError(err: string | string[]):void{
 //     console.log(a,b);
 //   }
 // }
+
+//! 2 literal type 
+
+//! num
+
+// let num: 1 = 1
+// num = 2
+
+// let score: 0 | 1  | 2 =  2
+// score = 0
+// score = 1
+// score = 2
+// score = 3
+
+//! str
+
+// let color: 'red' = 'red'
+// color = 'red'
+
+// let statuss: 'sucess' | 'error' | 'pending' = 'error'
+// statuss = 'pending'
+// statuss = 'sucess'
+// statuss = 'sus'
+
+//! bool
+let isTrue: true = true
+
+
+/////////////////////////////////////////////////////////////
+
+//get, post, delete
+
+// function fetchAuth(url: string, method: string){
+//   fetch(method)
+// }
+
+// fetchAuth('https://site', 'create')
+
+//! 1 enum
+
+// enum ReqType{
+//   GET = 'get',
+//   POST = 'post',
+//   DEL = 'delete'
+// }
+
+// function fetchAuth(url: string, method: ReqType){
+//   fetch(method)
+// }
+
+// fetchAuth('https://site', ReqType.POST)
+// fetchAuth('https://site', ReqType.DEL)
+
+//! 2 literal
+
+// function fetchAuth(url: string, method: 'post' | 'get' | 'delete'){
+//   fetch(method)
+// }
+
+// fetchAuth('https://site', 'delete')
+// fetchAuth('https://site', 'get')
+// fetchAuth('https://site', 'post')
+
+
+// let method = 'post'
+// const method = 'post'
+
+// fetchAuth('https://site', method as 'post')
+
+// function fetchAuth(url: string, method: 'post' | 'get' | 'delete'): 1 | -1{
+//   fetch(method)
+//   return -1
+// }
+
+//! 3 type Aliases
+
+type httpMethod =  'post' | 'delete' | 'get'
+type str = string
+
+function fetchAuth(url: str, method: httpMethod): 1 | -1{
+  fetch(method)
+  return -1
+}
+
+//? obj
+
+// const user: {
+//   name: string,
+//   age: number,
+//   skills: string[]
+// } = {
+//   name: 'Alex',
+//   age: 28,
+//   skills: ['1', '2']
+// }
+
+// type User = {
+//   name: string,
+//   age: number,
+//   skills: string[]
+// }
+
+// const activeUser: User = {
+//   name: 'Alex',
+//   age: 28,
+//   skills: ['1', '2']
+// }
+
+// function  test(parm: User){}
+
+// type Role = {
+//   roleName: string,
+//   id: string
+// }
+
+
+//! intersection (&)
+// type UserWithRole = User & Role
+
+// type UserOrRole = User | Role
+
+// const superUser:  UserWithRole = {
+//   name: 'Alex',
+//   age: 28,
+//   skills: ['1', '2'],
+//   id: 'qwerqwer',
+//   roleName: 'dev'
+// }
+
+//! 4 interface
+
+
+// interface IUser {
+//   name: string,
+//   age: number,
+//   skills: string[]
+// }
+
+// const actUser: IUser = {
+//   name: 'Alex',
+//   age: 28,
+//   skills: ['1', '2']
+// }
+
+// interface IRole {
+//   roleName: string,
+//   id: string
+// }
+
+// interface IUserWithRole extends IUser, IRole{
+//   createdAt: Date
+// }
+
+
+// const superUser:  IUserWithRole = {
+//   name: 'Alex',
+//   age: 28,
+//   skills: ['1', '2'],
+//   id: 'qwerqwer',
+//   roleName: 'dev',
+//   createdAt: new Date()
+// }
+
+
+// interface IMethod {
+//   log: (id: number) => string 
+// }
+// type TMethod = {
+//   log: (id: number) => string 
+// }
+
+///////////////////////////////////////////////
+
+
+// interface Iperson {
+//   name: string
+// }
+
+// interface Iperson {
+//   age: number
+// }
+
+// const person: Iperson = {
+//   name: 'Alex',
+//   age: 18
+// }
+
+
+// type ID =  string | number
+
+// interface id {
+//   id: string | number
+// }
+
+//! 5 opsional
+
+// ?
+interface IUser {
+  login: string,
+  // password: string | undefined
+  password?: string 
+}
+
+const userlogin: IUser = {
+  login: 'email@gmail.com',
+  password: '***********'
+}
+const userForgotPassword: IUser = {
+  login: 'email@gmail.com',
+}
+
+function multiply(a:number, b?:number):number{
+  if(!b)return a * a
+  return a * b
+}
+
+//! fun + obj
+
+interface UserPro {
+  login: string,
+  password?: {
+    type: 'primary' | 'secondary'
+  }
+}
+
+function testPass(user: UserPro){
+  const q = user.password?.type
+  const t = user.password!.type
+}
+
+
+
+
